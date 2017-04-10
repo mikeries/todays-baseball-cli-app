@@ -1,5 +1,2 @@
-require "todays_baseball/version"
-
-module TodaysBaseball
-  # Your code goes here...
-end
+require_relative "./todays_baseball/version"
+require_relative "./todays_baseball/cli"

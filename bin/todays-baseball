@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
+require './lib/todays_baseball'
+
 TodaysBaseball::CLI.new.start
