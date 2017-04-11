@@ -1,4 +1,6 @@
 class TodaysBaseball::CLI
+
+
   def start
     list_games
     get_input
@@ -12,7 +14,7 @@ class TodaysBaseball::CLI
     puts "3. Reds @ Pirates, 2:05 ET"
     puts "4. Astros @ Seahawks, Delayed"
     puts ""
-    @@games = TodaysBaseball::Game.new.games
+    TodaysBaseball::Game.games
     games.each.with_index do |game, item|
       puts "#{item}. #{game.visitor_team_name} @ #{game.home_team_name}, #{game.score}, #{game.status}"
     end
