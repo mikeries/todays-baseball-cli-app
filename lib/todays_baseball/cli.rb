@@ -28,8 +28,7 @@ class TodaysBaseball::CLI
     end
   end
 
-  def show_game_details(game_number)
-    game = TodaysBaseball::Game.load_game_details(game_number-1)
+  def show_starting_pitchers(game)
     puts "Starting Pitchers"
     puts "#{game.visitor_team.name}: #{game.visitor_team.pitcher.name}, "+
          "#{game.visitor_team.pitcher.record}, #{game.visitor_team.pitcher.era}, "+
@@ -38,20 +37,21 @@ class TodaysBaseball::CLI
          "#{game.home_team.pitcher.record}, #{game.home_team.pitcher.era}, "+
          "#{game.home_team.pitcher.strikeouts}"
     puts ""
+  end
 
-    puts "#{game.visitor_team.name} Lineup"
+  def show_lineup(team)
+    puts "#{team.name} Lineup"
     puts "    Batter                       AVG     HR     RBI    SB"
-    game.visitor_team.roster.each do |player|
-      puts "#{player.batting_order}. #{player.name}, #{player.field_position}, "+
+    team.roster.each do |player|
+      puts "#{player.batting_order}. #{player.name}, #{player.field_position} "+
            "#{player.avg} #{player.home_runs} #{player.rbis}  #{player.stolen_bases}"
     end
+  end
 
-    puts "#{game.home_team.name} Lineup"
-    puts "    Batter                       AVG     HR     RBI    SB"
-    game.home_team.roster.each do |player|
-      puts "#{player.batting_order}. #{player.name}, #{player.field_position}, "+
-           "#{player.avg} #{player.home_runs} #{player.rbis}  #{player.stolen_bases}"
-    end
-    
+  def show_game_details(game_number)
+    game = TodaysBaseball::Game.load_game_details(game_number-1)
+    show_starting_pitchers(game)
+    show_lineup(game.visitor_team)
+    show_lineup(game.home_team)
   end
 end
