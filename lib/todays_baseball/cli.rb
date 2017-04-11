@@ -29,6 +29,7 @@ class TodaysBaseball::CLI
   end
 
   def show_starting_pitchers(game)
+    puts ""
     puts "Starting Pitchers"
     puts "#{game.visitor_team.name}: #{game.visitor_team.pitcher.name}, "+
          "#{game.visitor_team.pitcher.record}, #{game.visitor_team.pitcher.era}, "+
@@ -46,6 +47,7 @@ class TodaysBaseball::CLI
       puts "#{player.batting_order}. #{player.name}, #{player.field_position} "+
            "#{player.avg} #{player.home_runs} #{player.rbis}  #{player.stolen_bases}"
     end
+    puts ""
   end
 
   def show_game_details(game_number)
@@ -53,5 +55,6 @@ class TodaysBaseball::CLI
     show_starting_pitchers(game)
     show_lineup(game.visitor_team)
     show_lineup(game.home_team)
+    puts "Enter 'list' to see the list of games, or 'exit'."
   end
 end
