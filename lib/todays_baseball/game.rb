@@ -35,4 +35,20 @@ class TodaysBaseball::Game
     game2.status = "Top of the 4th"
     game2.save
   end
+
+  def self.load_game_details(selection)
+    game = self.games[selection]
+    game.home_team.pitcher=TodaysBaseball::Pitcher.new("Jake Arrieta, LHP #50")
+    game.home_team.pitcher.record="1 - 0"
+    game.home_team.pitcher.era="3.2"
+    game.home_team.pitcher.strikeouts="9 K"    
+
+    game.visitor_team.pitcher=TodaysBaseball::Pitcher.new("Lance Lynn, RHP #31")
+    game.visitor_team.pitcher.record="0 - 0"
+    game.visitor_team.pitcher.era="3.38"
+    game.visitor_team.pitcher.strikeouts="4 K"
+
+    
+    
+  end
 end
