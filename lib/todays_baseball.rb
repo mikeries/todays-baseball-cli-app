@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'open-uri'
 require_relative "./todays_baseball/version"
 require_relative "./todays_baseball/team"
 require_relative "./todays_baseball/player"
