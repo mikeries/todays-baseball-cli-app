@@ -9,14 +9,14 @@ class TodaysBaseball::CLI
   def list_games
     puts "Today's Baseball Games"
     puts "----------------------"
-    puts "1. Mets @ Phillies, 3 to 4, Final"
-    puts "2. Carinals @ Cubs, 2 to 0, Top of the 4th"
-    puts "3. Reds @ Pirates, 2:05 ET"
-    puts "4. Astros @ Seahawks, Delayed"
-    puts ""
-    TodaysBaseball::Game.games
-    games.each.with_index do |game, item|
-      puts "#{item}. #{game.visitor_team_name} @ #{game.home_team_name}, #{game.score}, #{game.status}"
+    # puts "1. Mets @ Phillies, 3 to 4, Final"
+    # puts "2. Carinals @ Cubs, 2 to 0, Top of the 4th"
+    # puts "3. Reds @ Pirates, 2:05 ET"
+    # puts "4. Astros @ Seahawks, Delayed"
+    # puts ""
+    @@games = TodaysBaseball::Game.games
+    @@games.each.with_index do |game, item|
+      puts "#{item+1}. #{game.visitor_team_name} @ #{game.home_team_name}, #{game.score}, #{game.status}"
     end
   end
 
