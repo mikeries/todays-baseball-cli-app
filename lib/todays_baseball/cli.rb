@@ -10,7 +10,7 @@ class TodaysBaseball::CLI
     puts "----------------------"
     @games = TodaysBaseball::Game.games
     @games.each.with_index do |game, item|
-      puts "#{item+1}. #{game.visitor_team_name} @ #{game.home_team_name}, #{game.score}, #{game.status}"
+      puts "#{item+1}. #{game.visitor_team.name} @ #{game.home_team.name}, #{game.score}, #{game.status}"
     end
   end
 

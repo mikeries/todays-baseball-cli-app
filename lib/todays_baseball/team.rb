@@ -3,7 +3,7 @@ class TodaysBaseball::Team
 
   @roster = []
 
-  def new(name)
+  def initialize(name)
     @name = name;
   end
 end
