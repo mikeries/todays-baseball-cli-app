@@ -29,6 +29,7 @@ class TodaysBaseball::CLI
   end
 
   def show_game_details(game_number)
+    TodaysBaseball::Game.load_game_details(game_number-1)
     puts "Details for game #{game_number}."
   end
 end

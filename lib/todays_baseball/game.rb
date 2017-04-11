@@ -48,7 +48,29 @@ class TodaysBaseball::Game
     game.visitor_team.pitcher.era="3.38"
     game.visitor_team.pitcher.strikeouts="4 K"
 
-    
-    
+    game.home_team.roster=[]
+    (1..10).each do |i|
+      player = TodaysBaseball::Player.new("Player #{i}")
+      player.batting_order = i
+      player.field_position = ["2B", "SS", "LF", "1B", "3B", "DH", "RF", "C", "CF", "P"][i-1]
+      player.avg = ".111"
+      player.home_runs = "0"
+      player.rbis = "0"
+      player.stolen_bases="0"
+      game.home_team.roster << player
+    end
+
+    game.visitor_team.roster=[]
+    (1..10).each do |i|
+      player = TodaysBaseball::Player.new("Player #{i}")
+      player.batting_order = i
+      player.field_position = ["2B", "SS", "LF", "1B", "3B", "DH", "RF", "C", "CF", "P"][i-1]
+      player.avg = ".111"
+      player.home_runs = "0"
+      player.rbis = "0"
+      player.stolen_bases="0"
+      game.visitor_team.roster << player
+    end
+    game
   end
 end
