@@ -8,8 +8,8 @@ class TodaysBaseball::CLI
   def list_games
     puts "Today's Baseball Games"
     puts "----------------------"
-    @@games = TodaysBaseball::Game.games
-    @@games.each.with_index do |game, item|
+    @games = TodaysBaseball::Game.games
+    @games.each.with_index do |game, item|
       puts "#{item+1}. #{game.visitor_team_name} @ #{game.home_team_name}, #{game.score}, #{game.status}"
     end
   end
